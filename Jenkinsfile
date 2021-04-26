@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     stages{
-        stage('Print current Branch') {
+        stage('start application') {
             steps {
                 npm pack
                 npm start
