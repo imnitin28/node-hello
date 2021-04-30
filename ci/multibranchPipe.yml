@@ -1,0 +1,35 @@
+---
+groups:
+  - name: Multibranch Pipeline
+    jobs:
+      - build
+      - test
+
+resources:
+  - name: git1
+    type: git
+    icon: github
+    source: 
+      uri: https://github.com/imnitin28/node-hello.git
+      branch: main
+
+  - name: git2
+    type: git
+    icon: github
+    source: 
+      uri: https://github.com/imnitin28/node-hello.git
+      branch: devdocker exe
+
+jobs:
+  - name: build
+    public: true
+    serial: true
+    plan:
+      - get: git1
+        trigger: true
+
+  - name: test
+    serial: true
+    plan:
+      - get: git2
+        trigger: true
