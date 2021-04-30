@@ -18,7 +18,7 @@ resources:
     icon: github
     source: 
       uri: https://github.com/imnitin28/node-hello.git
-      branch: devdocker exe
+      branch: dev
 
 jobs:
   - name: build
